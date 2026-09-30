@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import gsap from "gsap";
 import Navbar from "../../../app/shared/Navbar";
+import AnimateSkill from "./AnimateSkill";
 
 const Hero = () => {
   const sectionRef = useRef(null);
@@ -535,15 +536,7 @@ const Hero = () => {
 
             {/* Role */}
 
-            <h2 className="hero-role mt-7 text-3xl font-bold sm:text-4xl">
-
-              Full Stack{" "}
-
-              <span className="bg-linear-to-r from-cyan-300 via-blue-400 to-violet-500 bg-clip-text text-transparent">
-                Developer
-              </span>
-
-            </h2>
+            <AnimateSkill/>
 
             <div className="mt-6 h-0.5 w-12 bg-cyan-400 shadow-[0_0_15px_#00e5ff]" />
 

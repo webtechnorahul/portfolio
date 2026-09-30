@@ -55,6 +55,7 @@ const Contact = () => {
 
   return (
     <section
+    id="contact"
       ref={page}
       className="relative min-h-screen overflow-hidden bg-black px-6 py-20 text-white md:px-16"
     >

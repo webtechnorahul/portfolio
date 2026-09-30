@@ -4,19 +4,17 @@ import Navbar from '../../app/shared/Navbar'
 import Skill from './components/Skill'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
-import Footer from './components/Footer'
+import Footer from '../../app/shared/Footer'
 import Gallary from '../gallary/Gallary'
 
 const Home = () => {
   return (
-    <div>
-      <Navbar />
+    <div className='scroll-smooth duration-300 scroll-mt-24'>
       <Hero />
       <Skill/>
       <Projects/>
       <Contact/>
       <Gallary/>
-      <Footer/>
     </div>
   )
 }

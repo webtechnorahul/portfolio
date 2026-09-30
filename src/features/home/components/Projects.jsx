@@ -1,200 +1,126 @@
-import React, { useLayoutEffect, useRef } from "react";
+import React, { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
+import { useGSAP } from "@gsap/react";
+import { FaArrowTrendUp } from "react-icons/fa6";
 gsap.registerPlugin(ScrollTrigger);
-
-// const projects = [
-//   {
-//     no: "01",
-//     title: "E-Commerce",
-//     type: "MERN STACK",
-//     desc: "Modern full-stack shopping platform with authentication, cart and products.",
-//     tech: ["React", "Node", "MongoDB"],
-//     image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000",
-//   },
-//   {
-//     no: "02",
-//     title: "Student ERP",
-//     type: "FULL STACK",
-//     desc: "Complete student management system for academic and administrative work.",
-//     tech: ["React", "Express", "MongoDB"],
-//     image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1000",
-//   },
-//   {
-//     no: "03",
-//     title: "Portfolio",
-//     type: "CREATIVE WEB",
-//     desc: "Interactive portfolio with smooth animations and modern visual experiences.",
-//     tech: ["React", "GSAP", "Three.js"],
-//     image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1000",
-//   },
-// ];
-
  const Projects=()=> {
+      const containerRef=useRef(null);
+      const box1Ref=useRef(null);
+      const box2Ref=useRef(null);
+      const box3Ref=useRef(null);
+      const box4Ref=useRef(null);
+
+    useGSAP(()=>{
+      const tl= gsap.timeline({
+        duration:1,
+        scrollTrigger:{
+          trigger:containerRef.current,
+          start:"top 0%",
+          end:"bottom -10%",
+          scrub:1,
+          toggleActions: "play none none none", 
+          pin:true,
+        }
+      })
+      tl.to(box1Ref.current,{
+        top:'35%',
+      }).to(box2Ref.current,{
+        top:'44%',
+      }).to(box3Ref.current,{
+        top:'53%',
+      }).to(box4Ref.current,{
+        top:'62%',
+      });
+    },{scope:containerRef})
 
   return (
     <section
+    ref={containerRef}
       id="projects"
-      className="min-h-screen bg-[#080808] px-6 text-white md:px-16"
+      className="min-h-screen w-full max-w-362 bg-[#080808] px-6 text-white md:px-16"
     >
-      <div className="project-title mb-16 py-20">
-        <p className="flex gap-5 justify-center items-center mb-4 text-lg text-blue-600 tracking-[0.4em]">
-          <span className="w-20 h-[0.7px] bg-red-600" ></span>
-          PROJECTS
-          <span className="w-20 h-[0.7px] bg-red-600" ></span>
-        </p>
-        <h2 className="text-5xl font-bold md:text-7xl">
-          Selected <span className="text-zinc-600">Works.</span>
-        </h2>
+      <div className="relative project-title mb-16 py-20">
+          <p className="flex gap-5 justify-center items-center mb-4 text-lg text-blue-600 tracking-[0.4em]">
+            <span className="w-20 h-[0.7px] bg-red-600" ></span>
+            PROJECTS
+            <span className="w-20 h-[0.7px] bg-red-600" ></span>
+          </p>
+          <h2 className="text-5xl font-bold md:text-7xl">
+            Selected <span className="text-zinc-600">Works.</span>
+          </h2>
       </div>
-      <div className="projects-grid flex flex-col gap-5">
-        <div className="skill-card flex flex-row w-full h-fit card px-10">
-            <div className="left h-100 w-1/2">
-                <img className="w-full h-full scale-90 hover:scale-100 duration-100 hover:rounded-2xl" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt="Project image"/>
-            </div>
-            <div className="right px-20 py-1 w-[50%] h-fit">
-                <div>
-                    <span className="text-sm text-[rgb(120,122,128)]">MERN Stack</span>
-                    <h2 className="bg-linear-to-r from-pink-500 0% via-blue-500 50% to-blue-500 100% bg-clip-text text-transparent font-bold text-4xl">E-Commerce</h2>
-                    <p className="text-[rgb(146,148,154)] py-3" >Modern full-stack shopping platform with authentication, cart and products.</p>
-
-                    <ol className="grid grid-cols-3 w-full gap-5">
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >React</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Nodejs</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >MongoDB</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Gsap</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Tailwindcss</li>
-                    </ol>
-                </div>
-                <button className="rounded-full mt-10 border border-white/20 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
-                    View Project <span className="ml-3">↗</span>
-                </button>
-            </div>
-        </div>
-        <div className="skill-card flex flex-row w-full h-fit card px-10">
-            <div className="left h-100 w-1/2">
-                <img className="w-full h-full scale-90 hover:scale-100 duration-100 hover:rounded-2xl" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt="Project image"/>
-            </div>
-            <div className="right px-20 py-1 w-[50%] h-fit">
-                <div>
-                    <span className="text-sm text-[rgb(120,122,128)]">MERN Stack</span>
-                    <h2 className="bg-linear-to-r from-pink-500 0% via-blue-500 50% to-blue-500 100% bg-clip-text text-transparent font-bold text-4xl">E-Commerce</h2>
-                    <p className="text-[rgb(146,148,154)] py-3" >Modern full-stack shopping platform with authentication, cart and products.</p>
-
-                    <ol className="grid grid-cols-3 w-full gap-5">
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >React</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Nodejs</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >MongoDB</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Gsap</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Tailwindcss</li>
-                    </ol>
-                </div>
-                <button className="rounded-full mt-10 border border-white/20 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
-                    View Project <span className="ml-3">↗</span>
-                </button>
-            </div>
-        </div>
-        <div className="skill-card flex flex-row w-full h-fit card px-10">
-            <div className="left h-100 w-1/2">
-                <img className="w-full h-full scale-90 hover:scale-100 duration-100 hover:rounded-2xl" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt="Project image"/>
-            </div>
-            <div className="right px-20 py-1 w-[50%] h-fit">
-                <div>
-                    <span className="text-sm text-[rgb(120,122,128)]">MERN Stack</span>
-                    <h2 className="bg-linear-to-r from-pink-500 0% via-blue-500 50% to-blue-500 100% bg-clip-text text-transparent font-bold text-4xl">E-Commerce</h2>
-                    <p className="text-[rgb(146,148,154)] py-3" >Modern full-stack shopping platform with authentication, cart and products.</p>
-
-                    <ol className="grid grid-cols-3 w-full gap-5">
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >React</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Nodejs</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >MongoDB</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Gsap</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Tailwindcss</li>
-                    </ol>
-                </div>
-                <button className="rounded-full mt-10 border border-white/20 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
-                    View Project <span className="ml-3">↗</span>
-                </button>
-            </div>
-        </div>
-        <div className="skill-card flex flex-row w-full h-fit card px-10">
-            <div className="left h-100 w-1/2">
-                <img className="w-full h-full scale-90 hover:scale-100 duration-100 hover:rounded-2xl" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt="Project image"/>
-            </div>
-            <div className="right px-20 py-1 w-[50%] h-fit">
-                <div>
-                    <span className="text-sm text-[rgb(120,122,128)]">MERN Stack</span>
-                    <h2 className="bg-linear-to-r from-pink-500 0% via-blue-500 50% to-blue-500 100% bg-clip-text text-transparent font-bold text-4xl">E-Commerce</h2>
-                    <p className="text-[rgb(146,148,154)] py-3" >Modern full-stack shopping platform with authentication, cart and products.</p>
-
-                    <ol className="grid grid-cols-3 w-full gap-5">
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >React</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Nodejs</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >MongoDB</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Gsap</li>
-                        <li className="bg-transparent border border-[rgba(88,87,87,0.98)] px-7 py-1 text-center w-fit rounded-2xl" >Tailwindcss</li>
-                    </ol>
-                </div>
-                <button className="rounded-full mt-10 border border-white/20 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
-                    View Project <span className="ml-3">↗</span>
-                </button>
-            </div>
-        </div>
-      </div>
-
-      {/* <div className="projects-grid">
-        {projects.map((project) => (
-          <div
-            key={project.no}
-            className="project-card group overflow-hidden rounded-4xl border border-white/10 bg-[#111]"
-          >
-            <div className="grid md:grid-cols-2">
-              <div className="relative h-80 overflow-hidden md:h-112">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="project-img absolute inset-[-10%] h-[120%] w-[120%] object-cover grayscale transition duration-700 group-hover:scale-105 group-hover:grayscale-0"
-                />
-                <span className="absolute left-6 top-6 rounded-full bg-black/50 px-4 py-2 text-xs backdrop-blur">
-                  {project.no}
-                </span>
-              </div>
-
-              <div className="flex flex-col justify-between p-8 md:p-12">
-                <div>
-                  <p className="text-xs tracking-[0.3em] text-zinc-500">
-                    {project.type}
-                  </p>
-                  <h3 className="mt-5 text-4xl font-semibold">
-                    {project.title}
-                  </h3>
-                  <p className="mt-6 max-w-md text-sm leading-7 text-zinc-400">
-                    {project.desc}
-                  </p>
-                </div>
-
-                <div className="mt-10">
-                  <div className="mb-7 flex flex-wrap gap-2">
-                    {project.tech.map((item) => (
-                      <span
-                        key={item}
-                        className="rounded-full border border-white/10 px-4 py-2 text-xs text-zinc-300"
-                      >
-                        {item}
-                      </span>
-                    ))}
-                  </div>
-
-                  <button className="rounded-full border border-white/20 px-6 py-3 text-sm transition duration-300 hover:bg-white hover:text-black">
-                    View Project <span className="ml-3">↗</span>
-                  </button>
-                </div>
-              </div>
-            </div>
+      <div className="project-grid flex items-center justify-center flex-col">
+        <div ref={box1Ref} className=" absolute z-1 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+          <div className="left w-[40%]">
+            <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
           </div>
-        ))}
-      </div> */}
+          <div className="right w-[40%]">
+            <h2 className="text-3xl font-bold tracking-tight bg-linear-to-r from-blue-400 via-pink-300 to-pink-500 bg-clip-text text-transparent sm:text-4xl md:text-5xl">E-commere</h2>
+            <p></p>
+            <div className="tech-used flex flex-wrap gap-x-10 gap-y-1 py-5">
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">tailwind</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">react</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">nodejs</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">devOps</span>
+            </div>
+            <Link to="/project" className="group pointer-events-auto flex w-fit items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 font-medium text-zinc-100 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-500 hover:bg-zinc-800 hover:text-white active:scale-[0.98]">
+                Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
+          </div>
+        </div>
+        <div ref={box2Ref} className="absolute z-2 pointer-events-none bottom-[-500%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+          <div className="left w-[40%]">
+            <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
+          </div>
+          <div className="right w-[40%]">
+            <h2 className="text-3xl font-bold tracking-tight bg-linear-to-r from-blue-400 via-pink-300 to-pink-500 bg-clip-text text-transparent sm:text-4xl md:text-5xl">E-commere</h2>
+            <p></p>
+            <div className="tech-used flex flex-wrap gap-x-10 gap-y-1 py-5">
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">tailwind</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">react</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">nodejs</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">devOps</span>
+            </div>
+            <Link to="/project" className="group flex w-fit items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 font-medium text-zinc-100 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-500 hover:bg-zinc-800 hover:text-white active:scale-[0.98]">
+                Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
+          </div>
+        </div>
+        <div ref={box3Ref} className="absolute z-3 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+          <div className="left w-[40%]">
+            <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
+          </div>
+          <div className="right w-[40%]">
+            <h2 className="text-3xl font-bold tracking-tight bg-linear-to-r from-blue-400 via-pink-300 to-pink-500 bg-clip-text text-transparent sm:text-4xl md:text-5xl">E-commere</h2>
+            <p></p>
+            <div className="tech-used flex flex-wrap gap-x-10 gap-y-1 py-5">
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">tailwind</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">react</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">nodejs</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">devOps</span>
+            </div>
+            <Link to="/project" className="group flex w-fit items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 font-medium text-zinc-100 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-500 hover:bg-zinc-800 hover:text-white active:scale-[0.98]">
+                Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
+          </div>
+        </div>
+        <div ref={box4Ref} className="absolute z-4 pointer-events-none -bottom-full flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+          <div className="left w-[40%]">
+            <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
+          </div>
+          <div className="right w-[40%]">
+            <h2 className="text-3xl font-bold tracking-tight bg-linear-to-r from-blue-400 via-pink-300 to-pink-500 bg-clip-text text-transparent sm:text-4xl md:text-5xl">E-commere</h2>
+            <p></p>
+            <div className="tech-used flex flex-wrap gap-x-10 gap-y-1 py-5">
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">tailwind</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">react</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">nodejs</span>
+              <span className="bg-[rgb(28,28,28)] px-5 py-1">devOps</span>
+            </div>
+            <Link to="/project" className="group flex w-fit items-center gap-2 rounded-2xl border border-zinc-700 bg-zinc-900 px-5 py-3 font-medium text-zinc-100 transition-all duration-300 hover:scale-[1.02] hover:border-zinc-500 hover:bg-zinc-800 hover:text-white active:scale-[0.98]">
+                Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }

@@ -65,7 +65,7 @@ const Skill = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="min-h-screen bg-[#030014] px-5 text-white"
+      className="scroll-mt-24 scroll-smooth duration-100 min-h-screen bg-[#030014] px-5 text-white"
     >
       <div className="mx-auto max-w-7xl">
 
@@ -166,3 +166,20 @@ const Skill = () => {
 };
 
 export default Skill;
+
+// {navItems.map((item, index) => (
+//             <a
+//               key={item.name}
+//               href={item.href}
+//               className={`nav-link relative px-1 py-3 text-[15px] font-medium transition-all duration-300 ${index === 0
+//                 ? "text-cyan-400"
+//                 : "text-gray-300 hover:text-cyan-400"
+//                 }`}
+//             >
+//               {item.name}
+
+//               {index === 0 && (
+//                 <span className="absolute bottom-0 left-0 h-0.5 w-full bg-cyan-400 shadow-[0_0_12px_#00e5ff]" />
+//               )}
+//             </a>
+//           ))}
