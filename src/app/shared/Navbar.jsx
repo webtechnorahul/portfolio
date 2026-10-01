@@ -13,7 +13,7 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="fixed left-0 top-0 z-50 w-full border-b border-cyan-400/10 bg-[#02040b]/70 backdrop-blur-xl">
+    <header className="fixed left-0 top-0 z-50 w-full border-b border-cyan-400/10 bg-black/70">
       <nav className="mx-auto flex h-22 max-w-362.5 items-center justify-between px-6 lg:px-10">
 
         {/* Logo */}
@@ -120,8 +120,7 @@ const Navbar = () => {
       {/* Mobile Navigation */}
       <div
         className={`
-          overflow-hidden border-t border-cyan-400/10
-          bg-[#02040b]/95 backdrop-blur-xl
+          overflow-hidden border-t border-cyan-400/10 bg-black/70
           transition-all duration-300 lg:hidden
           ${isOpen ? "max-h-125 opacity-100" : "max-h-0 opacity-0"}
         `}

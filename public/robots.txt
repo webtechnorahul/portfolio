@@ -1,0 +1,12 @@
+
+User-agent: *
+Allow: /
+
+
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /settings/
+Disallow: /checkout/config/
+
+
+Sitemap: https://yourdomain.com

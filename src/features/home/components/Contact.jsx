@@ -10,6 +10,7 @@ import {
   FaInstagram,
   FaArrowUpRightFromSquare,
 } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 const Contact = () => {
   const page = useRef(null);
@@ -59,6 +60,12 @@ const Contact = () => {
       ref={page}
       className="relative min-h-screen overflow-hidden bg-black px-6 py-20 text-white md:px-16"
     >
+      <Helmet>
+        <title>Contact Us | Get in Touch with MyBrand</title>
+        <meta name="description" content="Have a digital project in mind? Contact MyBrand today for modern web design and development consulting." />
+        <meta property="og:title" content="Contact MyBrand" />
+        <link rel="canonical" href="https://sadikaro.in/contact" />
+      </Helmet>
       {/* Background Glow */}
       <div className="glow absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-blue-600/20 blur-[120px]" />
 
@@ -123,7 +130,7 @@ const Contact = () => {
         </div>
 
         {/* Contact Form */}
-        <div className="contact-form rounded-3xl border border-blue-500/40 bg-white/[0.03] p-7 shadow-2xl shadow-blue-500/10 backdrop-blur-xl md:p-10">
+        <div className="contact-form rounded-3xl border border-blue-500/40 bg-black/70 p-7 shadow-2xl shadow-blue-500/10 md:p-10">
 
           <div className="mb-8 flex items-center gap-4">
 

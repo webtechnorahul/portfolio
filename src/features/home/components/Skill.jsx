@@ -99,7 +99,7 @@ const Skill = () => {
             return (
               <div
                 key={name}
-                className="skill-card group relative overflow-hidden rounded-3xl border border-indigo-500/20 bg-white/4 p-6 text-center backdrop-blur-xl"
+                className="skill-card group relative overflow-hidden rounded-3xl border border-indigo-500/20 bg-black/70 p-6 text-center"
               >
                 {/* Glow */}
                 <div className="absolute left-1/2 top-1/2 h-32 w-32 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-600/10 blur-3xl transition-all group-hover:bg-purple-600/20" />

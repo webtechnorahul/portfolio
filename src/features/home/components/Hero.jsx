@@ -508,7 +508,7 @@ const Hero = () => {
 
             {/* Badge */}
 
-            <div className="hero-badge mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-400/50 bg-cyan-400/4 px-5 py-3 shadow-[0_0_25px_rgba(0,229,255,0.08)] backdrop-blur-xl">
+            <div className="hero-badge mb-7 inline-flex items-center gap-3 rounded-full border border-cyan-400/50 bg-black/70 px-5 py-3 shadow-[0_0_25px_rgba(0,229,255,0.08)]">
 
               <span className="text-xl">
                 👋
@@ -573,7 +573,7 @@ const Hero = () => {
 
               <a
                 href="#contact"
-                className="rounded-xl border border-cyan-400/60 bg-cyan-400/2 px-7 py-4 font-semibold text-cyan-300 backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400/10 hover:shadow-[0_0_25px_rgba(0,229,255,0.15)]"
+                className="rounded-xl border border-cyan-400/60 bg-black/70 px-7 py-4 font-semibold text-cyan-300 transition-all duration-300 hover:-translate-y-1 hover:bg-cyan-400/10 hover:shadow-[0_0_25px_rgba(0,229,255,0.15)]"
               >
                 Contact Me
               </a>
@@ -667,8 +667,10 @@ const Hero = () => {
                 {/* Your hologram image */}
 
                 <img
-                  src="/hologram.png"
-                  alt="Rahul Kumar hologram"
+                  src="/rahul.webp"
+                   fetchPriority="high"
+                   decoding="async"
+                   alt="Portfolio"
                   className="relative h-155 w-auto max-w-[90vw] object-contain"
                 />
 
@@ -684,7 +686,7 @@ const Hero = () => {
                 CODE CARD
             ================================================= */}
 
-            <div className="code-card absolute right-0 top-[0%] z-30 hidden w-72 rounded-xl border border-cyan-400/30 bg-[#020914]/80 p-5 font-mono text-xs shadow-[0_0_30px_rgba(0,174,255,0.1)] backdrop-blur-xl xl:block">
+            <div className="code-card absolute right-0 top-[0%] z-30 hidden w-72 rounded-xl border border-cyan-400/30 bg-black/70 p-5 font-mono text-xs shadow-[0_0_30px_rgba(0,174,255,0.1)] xl:block">
 
               <div className="mb-4 flex gap-2">
                 <span className="h-2 w-2 rounded-full bg-red-400" />
@@ -729,7 +731,7 @@ const Hero = () => {
 
             <div
               ref={cardRef}
-              className="available-card absolute bottom-20 right-0 z-40 w-75 rounded-2xl border border-cyan-400/25 bg-[#030914]/80 p-5 shadow-[0_0_35px_rgba(0,174,255,0.12)] backdrop-blur-xl"
+              className="available-card absolute bottom-20 right-0 z-40 w-75 rounded-2xl border border-cyan-400/25 bg-black/70 p-5 shadow-[0_0_35px_rgba(0,174,255,0.12)]"
             >
 
               <div className="flex items-center gap-2">
@@ -790,7 +792,7 @@ const Tech = ({ icon, name }) => {
   return (
     <div className="group flex flex-col items-center gap-2">
 
-      <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-cyan-400/25 bg-[#030a14]/70 text-xl text-cyan-400 shadow-[0_0_15px_rgba(0,174,255,0.05)] backdrop-blur-xl transition-all duration-300 group-hover:-translate-y-1 group-hover:border-cyan-400/70 group-hover:bg-cyan-400/10 group-hover:shadow-[0_0_25px_rgba(0,229,255,0.2)]">
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl border border-cyan-400/25 bg-black/70 text-xl text-cyan-400 shadow-[0_0_15px_rgba(0,174,255,0.05)] transition-all duration-300 group-hover:-translate-y-1 group-hover:border-cyan-400/70 group-hover:bg-cyan-400/10 group-hover:shadow-[0_0_25px_rgba(0,229,255,0.2)]">
 
         {icon}
 

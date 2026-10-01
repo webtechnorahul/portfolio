@@ -3,13 +3,16 @@ import { RouterProvider } from 'react-router-dom'
 import { router } from './AppRouter'
 import Footer from './shared/Footer'
 import Navbar from './shared/Navbar'
+import { HelmetProvider } from 'react-helmet-async'
 
 const App = () => {
   return (
     <>
-    <Navbar/>
-    <RouterProvider router={router}/>
-    <Footer/>
+    <HelmetProvider>
+      <Navbar/>
+      <RouterProvider router={router}/>
+      <Footer/>
+    </HelmetProvider>
     </>
     
   )

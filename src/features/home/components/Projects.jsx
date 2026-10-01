@@ -52,7 +52,7 @@ gsap.registerPlugin(ScrollTrigger);
           </h2>
       </div>
       <div className="project-grid flex items-center justify-center flex-col">
-        <div ref={box1Ref} className=" absolute z-1 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+        <div ref={box1Ref} className=" absolute z-1 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black/70">
           <div className="left w-[40%]">
             <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
           </div>
@@ -69,7 +69,7 @@ gsap.registerPlugin(ScrollTrigger);
                 Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
           </div>
         </div>
-        <div ref={box2Ref} className="absolute z-2 pointer-events-none bottom-[-500%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+        <div ref={box2Ref} className="absolute z-2 pointer-events-none bottom-[-500%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black/70">
           <div className="left w-[40%]">
             <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
           </div>
@@ -86,7 +86,7 @@ gsap.registerPlugin(ScrollTrigger);
                 Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
           </div>
         </div>
-        <div ref={box3Ref} className="absolute z-3 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+        <div ref={box3Ref} className="absolute z-3 pointer-events-none bottom-[-50%] flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black/70">
           <div className="left w-[40%]">
             <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
           </div>
@@ -103,7 +103,7 @@ gsap.registerPlugin(ScrollTrigger);
                 Visit Now <FaArrowTrendUp className="transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" /> </Link>
           </div>
         </div>
-        <div ref={box4Ref} className="absolute z-4 pointer-events-none -bottom-full flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black backdrop-blur-lg">
+        <div ref={box4Ref} className="absolute z-4 pointer-events-none -bottom-full flex flex-wrap w-full h-fit px-10 py-1 justify-around bg-black/70">
           <div className="left w-[40%]">
             <img className="w-full" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=1000" alt=''/>
           </div>
